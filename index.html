@@ -431,39 +431,39 @@
       renderUserTable();
     }
 
-    // // Render user table
-    // function renderUserTable() {
-    //   const tbody = document.getElementById('userTableBody');
-    //   tbody.innerHTML = ''; // kosongkan dulu
+    // Render user table
+    function renderUserTable() {
+      const tbody = document.getElementById('userTableBody');
+      tbody.innerHTML = ''; // kosongkan dulu
 
-    //   users.forEach((user, index) => {
-    //     const row = document.createElement('tr');
-    //     row.className = 'border-b';
+      users.forEach((user, index) => {
+        const row = document.createElement('tr');
+        row.className = 'border-b';
 
-    //     row.innerHTML = `
-    //       <td class="py-3">${user.username}</td>
-    //       <td class="py-3">${user.role}</td>
-    //       <td class="py-3">
-    //         <select id="roleSelect${index}" class="border border-gray-300 rounded-md px-2 py-1">
-    //           <option value="bendahara" ${user.role === 'bendahara' ? 'selected' : ''}>Bendahara</option>
-    //           <option value="verifikator" ${user.role === 'verifikator' ? 'selected' : ''}>Verifikator</option>
-    //         </select>
-    //       </td>
-    //       <td class="py-3">
-    //         <button onclick="updateRole(${index})" class="bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-700 transition">Simpan</button>
-    //       </td>
-    //     `;
-    //     tbody.appendChild(row);
-    //   });
-    // }
+        row.innerHTML = `
+          <td class="py-3">${user.username}</td>
+          <td class="py-3">${user.role}</td>
+          <td class="py-3">
+            <select id="roleSelect${index}" class="border border-gray-300 rounded-md px-2 py-1">
+              <option value="bendahara" ${user.role === 'bendahara' ? 'selected' : ''}>Bendahara</option>
+              <option value="verifikator" ${user.role === 'verifikator' ? 'selected' : ''}>Verifikator</option>
+            </select>
+          </td>
+          <td class="py-3">
+            <button onclick="updateRole(${index})" class="bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-700 transition">Simpan</button>
+          </td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
 
-    // // Update role user
-    // function updateRole(index) {
-    //   const selectedRole = document.getElementById(`roleSelect${index}`).value;
-    //   users[index].role = selectedRole;
-    //   alert(`Role untuk "${users[index].username}" telah diubah ke "${selectedRole}"`);
-    //   renderUserTable();
-    // }
+    // Update role user
+    function updateRole(index) {
+      const selectedRole = document.getElementById(`roleSelect${index}`).value;
+      users[index].role = selectedRole;
+      alert(`Role untuk "${users[index].username}" telah diubah ke "${selectedRole}"`);
+      renderUserTable();
+    }
 
   </script>
 </body>
